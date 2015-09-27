@@ -1,0 +1,58 @@
+#Documentation on the use and installation of php-mirror.
+
+# Installation #
+
+php-mirror is very easy to install and configure.
+
+When php-mirror is released (probably mid 2009) all you'll need to do is:
+
+# Download `mirror.php`
+
+# Upload to your desired destination
+
+# Go to `http://your-domain.com/path-to/mirror.php?a=adminStart` in your web browser and follow the steps.
+
+# Projects #
+
+A project is a group of files.  For example the Google Android project has the base installer and then hundreds of special files that can be downloaded.
+
+## Creating A Project ##
+
+A project can be created by going to `http://your-domain.com/path-to/mirror.php?a=adminProjectsAdd` (or clicking on Create Project in the control panel).  After filling out the necessary information a folder will be created.  If you entered `android` as the UNIX name, the folder could be found at (relative to mirror.php) `a/android`.  Any files uploaded to the `android` project could be found at `a/android/file.ext`.
+
+### Displaying Project Info Page ###
+
+To display a page with information about a certain project on it, go to `http://your-domain.com/path-to/mirror.php?p=PROjECT-NAME` (where PROJECT-NAME is the UNIX name of the project).  To customize this page, see below.
+
+## Managing Projects ##
+
+To manage a project go to `http://your-domain.com/path-to/mirror.php?a=adminProjectEdit`.  Here you can delete, rename, and edit information about a certain project.
+
+
+# Files #
+
+A project may release files which are, of course, available for download.
+
+## Adding A File ##
+
+To add a file go to `http://your-domain.com/path-to/mirror.php?a=adminFilesAdd` and follow the onscreen prompts.  The file can be uploaded from your computer/network or be downloaded from another web serer (URL).
+
+## Adding Multiple Files ##
+
+To add a large number of files at once, you can FTP into the server and drop them in their correct place.  If you were adding multiple files to the `android` project,  you would place them in `a/android/`.
+
+After adding these files go to `http://your-domain.com/path-to/mirror.php?a=adminPrjectInfoGenerate` and let the page fully load (if the files are large or there are many files it may take a number of minutes) before finishing.
+
+_Note:  What files you put on is up to you.  php-mirror is free software and can't be held responsible for copyright infringement or legal infringement.  See License for more information._
+
+## Managing Files ##
+
+To manage files (edit, view, delete) go to `http://your-domain.com/path-to/mirror.php?a=adminFiles` and take the appropriate action.
+
+## Downloading A File ##
+
+To download a file go to `http://your-domain.com/path-to/mirror.php?a=dl&p=PROJECT-NAME&f=FILENAME` (replacing PROJECT-NAME with the UNIX name of the project and FILENAME with the appropriate file.
+
+If short URLs are enabled for a project, the URL would be more like `http://your-domain.com/path-to/mirror.php?k=KEEY` (replacing KEEY with a 4 charcter code like 7y9T).
+
+
